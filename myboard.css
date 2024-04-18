@@ -1,0 +1,473 @@
+/*! Start Global Rules */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --main-border-Color: rgb(108, 24, 55);
+  --main-Color: rgb(255, 248, 244);
+  --secondary-Color: rgb(255 215 215);
+  --shadow-Color: rgb(255, 94, 93);
+  --shadow-Color-darker: rgb(234, 55, 82);
+  --screen-Color: rgb(0, 210, 190);
+  --screen-shadow-Color: rgb(108, 24, 55);
+  --pc-neck-shadow-color: rgb(231 155 154);
+  --pc-neck-color: rgb(247 182 173);
+  --main-rad: 30px;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #ffc107;
+}
+.board {
+  position: relative;
+  width: 800px;
+  height: 800px;
+  background-color: #ffc107;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.shadow {
+  background-color: var(--screen-shadow-Color);
+  position: absolute;
+  border-radius: var(--main-rad);
+  -webkit-border-radius: var(--main-rad);
+  -moz-border-radius: var(--main-rad);
+  -ms-border-radius: var(--main-rad);
+  -o-border-radius: var(--main-rad);
+}
+.screen-framework {
+  width: 450px;
+  height: 450px;
+  left: 150px;
+  top: 175px;
+  border: 10px solid #fff;
+  overflow: hidden;
+  border-bottom-width: 5px;
+}
+.screen-back {
+  height: 300px;
+  width: 100px;
+  top: 250px;
+  left: 570px;
+  border-radius: 0 30px 30px 0px;
+  -webkit-border-radius: 0 30px 30px 0px;
+  -moz-border-radius: 0 30px 30px 0px;
+  -ms-border-radius: 0 30px 30px 0px;
+  -o-border-radius: 0 30px 30px 0px;
+  border: 10px solid #fff;
+  border-left: 0;
+}
+.screen-framework::before,
+.screen-control::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--screen-shadow-Color);
+  left: 0;
+  top: 0;
+  z-index: 4;
+}
+.screen-back::before,
+.screen-back::after {
+  content: "";
+  background-color: var(--screen-shadow-Color);
+  width: 100px;
+  height: 50px;
+  position: absolute;
+  border: 10px solid #fff;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+  border-left: 0;
+}
+.screen-back::before {
+  transform: rotate(30deg);
+  -webkit-transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  -o-transform: rotate(30deg);
+  top: -25px;
+  left: -5px;
+  border-bottom: 0;
+  border-right: 0;
+}
+.screen-back::after {
+  transform: rotate(-30deg);
+  -webkit-transform: rotate(-30deg);
+  -moz-transform: rotate(-30deg);
+  -ms-transform: rotate(-30deg);
+  -o-transform: rotate(-30deg);
+  bottom: -25px;
+  left: -5px;
+  border-top: 0;
+  border-right: 0;
+}
+.screen-neck {
+  width: 300px;
+  height: 50px;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  bottom: 130px;
+  left: 225px;
+  z-index: 2;
+}
+.screen-control {
+  width: 550px;
+  height: 150px;
+  bottom: 23px;
+  left: 100px;
+  border: 10px solid #fff;
+  border-top-width: 3px;
+  border-bottom: 0;
+  overflow: hidden;
+}
+.screen-base {
+  width: 700px;
+  height: 50px;
+  bottom: 10px;
+  left: 25px;
+  border: 10px solid #fff;
+  z-index: 0;
+  overflow: hidden;
+}
+/*! End Global Rules  */
+/*? Start Drawing */
+.screen {
+  width: 310px;
+  height: 400px;
+  background-color: var(--main-Color);
+  position: absolute;
+  z-index: 6;
+  left: 180px;
+  top: 200px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  padding: 20px;
+  box-shadow: 7px 0 0px 0 var(--screen-shadow-Color);
+}
+.the-screen {
+  width: 100%;
+  height: 270px;
+  border-radius: 20px;
+  background-color: var(--screen-shadow-Color);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 10px;
+  border: 10px solid var(--screen-shadow-Color);
+}
+.the-screen::before {
+  content: "";
+  width: 90%;
+  height: 90%;
+  right: -15px;
+  bottom: -15px;
+  background-color: var(--screen-Color);
+  position: absolute;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+.the-screen span {
+  position: absolute;
+  height: 500px;
+  width: 50px;
+  top: -50px;
+  background-color: #ffffff74;
+  z-index: 1;
+  left: 80px;
+  transform: rotate(30deg);
+  -webkit-transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  -o-transform: rotate(30deg);
+}
+.the-screen span:first-of-type {
+  left: -20px;
+}
+.volume {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
+}
+.volume .general-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.volume .general-control span {
+  width: 25px;
+  height: 25px;
+  background-color: var(--screen-shadow-Color);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.volume::after {
+  content: "";
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  background-color: var(--screen-shadow-Color);
+  right: 20px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.side-screen {
+  position: absolute;
+  background-color: var(--shadow-Color);
+  width: 100px;
+  height: 400px;
+  left: 470px;
+  z-index: 5;
+  top: 200px;
+  border-radius: 0 20px 20px 0;
+  -webkit-border-radius: 0 20px 20px 0;
+  -moz-border-radius: 0 20px 20px 0;
+  -ms-border-radius: 0 20px 20px 0;
+  -o-border-radius: 0 20px 20px 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-direction: column;
+}
+.side-screen span {
+  background-color: var(--screen-shadow-Color);
+  width: 50px;
+  height: 4px;
+  position: relative;
+  left: 35px;
+}
+.side-screen::before,
+.side-screen::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+}
+.side-screen::before {
+  height: 30px;
+  top: 0;
+  background-color: var(--secondary-Color);
+}
+.side-screen::after {
+  height: 100px;
+  bottom: 0;
+  background-color: var(--shadow-Color-darker);
+}
+.back-screen {
+  width: 40px;
+  height: 250px;
+  position: absolute;
+  top: 275px;
+  left: 600px;
+  z-index: 10;
+  background-color: var(--shadow-Color);
+  border: 20px solid var(--shadow-Color);
+  border-radius: 0 30px 30px 0;
+  -webkit-border-radius: 0 30px 30px 0;
+  -moz-border-radius: 0 30px 30px 0;
+  -ms-border-radius: 0 30px 30px 0;
+  -o-border-radius: 0 30px 30px 0;
+}
+.back-screen::before {
+  content: "";
+  position: absolute;
+  z-index: 1212121;
+  width: 40px;
+  height: 40px;
+  right: -20px;
+  top: -20px;
+  background-color: var(--secondary-Color);
+  border-radius: 0 30px 0 0;
+  -webkit-border-radius: 0 30px 0 0;
+  -moz-border-radius: 0 30px 0 0;
+  -ms-border-radius: 0 30px 0 0;
+  -o-border-radius: 0 30px 0 0;
+}
+.back-screen::after {
+  content: "";
+  position: absolute;
+  z-index: 1212121;
+  width: 40px;
+  height: 100px;
+  right: -20px;
+  bottom: -20px;
+  background-color: var(--shadow-Color-darker);
+  border-radius: 0 0 30px 0;
+  -webkit-border-radius: 0 0 30px 0;
+  -moz-border-radius: 0 0 30px 0;
+  -ms-border-radius: 0 0 30px 0;
+  -o-border-radius: 0 0 30px 0;
+}
+.neck {
+  position: absolute;
+  width: 150px;
+  height: 15px;
+  background-color: var(--pc-neck-color);
+  top: 620px;
+  z-index: 1100;
+  left: 250px;
+}
+.neck-shadow {
+  position: absolute;
+  width: 90px;
+  height: 15px;
+  background-color: var(--pc-neck-shadow-color);
+  top: 620px;
+  z-index: 1100;
+  left: 410px;
+}
+.base {
+  position: absolute;
+  width: 325px;
+  height: 110px;
+  background-color: var(--main-Color);
+  bottom: 40px;
+  z-index: 2000;
+  left: 137.5px;
+  border-radius: 20px 20px 0 0;
+  -webkit-border-radius: 20px 20px 0 0;
+  -moz-border-radius: 20px 20px 0 0;
+  -ms-border-radius: 20px 20px 0 0;
+  -o-border-radius: 20px 20px 0 0;
+  box-shadow: 7px 0 0px 0 var(--screen-shadow-Color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+.speaker {
+  width: 100px;
+  height: 40px;
+  background-color: var(--screen-shadow-Color);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.turn-box {
+  padding: 10px;
+  height: 70px;
+  width: 150px;
+  background-color: var(--pc-neck-shadow-color);
+  border: 8px solid var(--screen-shadow-Color);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-around;
+}
+.turn-box::before {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 100%;
+  background-color: var(--screen-shadow-Color);
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+.turn-box .on-off-btn {
+  width: 30px;
+  height: 30px;
+  background-color: var(--screen-Color);
+  border: 5px solid var(--screen-shadow-Color);
+  box-shadow: 8px 0px 0px 0px var(--screen-shadow-Color);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.turn-box > div {
+  width: 60px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.turn-box > div span {
+  height: 4px;
+  width: 100%;
+  background-color: var(--screen-shadow-Color);
+}
+.side-base {
+  position: absolute;
+  width: 160px;
+  height: 110px;
+  background-color: var(--shadow-Color);
+  z-index: 1999;
+  left: 450px;
+  bottom: 40px;
+  border-radius: 0 20px 0 0;
+  -webkit-border-radius: 0 20px 0 0;
+  -moz-border-radius: 0 20px 0 0;
+  -ms-border-radius: 0 20px 0 0;
+  -o-border-radius: 0 20px 0 0;
+}
+.side-base::before,
+.side-base::after {
+  content: "20";
+  position: absolute;
+  z-index: 1999;
+
+  width: 100%;
+}
+.side-base::before {
+  height: 20px;
+  top: 0;
+  background-color: var(--secondary-Color);
+  border-radius: 0 20px 0 0;
+  -webkit-border-radius: 0 20px 0 0;
+  -moz-border-radius: 0 20px 0 0;
+  -ms-border-radius: 0 20px 0 0;
+  -o-border-radius: 0 20px 0 0;
+}
+.side-base::after {
+  height: 40px;
+  bottom: 0;
+  background-color: var(--shadow-Color-darker);
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+}
+/*? End Drawing */
